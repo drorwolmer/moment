@@ -671,7 +671,6 @@
         return regexes[token](config._strict, config._locale);
     }
 
-    // Code from http://stackoverflow.com/questions/3561493/is-there-a-regexp-escape-function-in-javascript
     function unescapeFormat(s) {
         return regexEscape(s.replace('\\', '').replace(/\\(\[)|\\(\])|\[([^\]\[]*)\]|\\(.)/g, function (matched, p1, p2, p3, p4) {
             return p1 || p2 || p3 || p4;
@@ -1139,7 +1138,6 @@
 
     function createDate (y, m, d, h, M, s, ms) {
         // can't just apply() to create a date:
-        // https://stackoverflow.com/q/181348
         var date = new Date(y, m, d, h, M, s, ms);
 
         // the date constructor remaps years 0-99 to 1900-1999
